@@ -1,0 +1,9 @@
+<h3>Add a Book</h3>
+<%= form_with model: @book do |form| %>
+  <%= form.text_field :book_title, placeholder: "Name of the Book" %>
+  <%= form.collection_select(:author, Author.all, :id, :complete_name, { include_blank: false }, {:multiple => true}) %>
+
+  <%= form.submit %>
+<% end %>
+
+
